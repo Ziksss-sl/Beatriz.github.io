@@ -8,14 +8,14 @@
         body {
             margin: 0;
             height: 100vh;
-            background: #d0e8ff; /* Azul bem clarinho */
+            background: #d0e8ff; /* Fundo azul claro */
             font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #8b0000;
+            color: white; /* Letras brancas */
             position: relative;
             overflow: hidden;
         }
@@ -53,7 +53,7 @@
     </style>
 </head>
 <body>
-    <h1>EU NAMORO!!!😡<br>TE AMO BIA!💍❤️</h1>
+    <h1>EU NAMORO!!!😡<br>TE AMO BIA!💍💙</h1>
 
     <audio controls>
         <source src="Aliança - Tribalistas (clipe oficial).mp3" type="audio/mpeg">
@@ -63,7 +63,7 @@
         function createEmoji() {
             const emoji = document.createElement('div');
             emoji.classList.add('emoji');
-            emoji.textContent = '❤️';
+            emoji.textContent = '💙'; // Coração azul
             emoji.style.left = Math.random() * window.innerWidth + 'px';
             emoji.style.animationDuration = Math.random() * 2 + 3 + 's';
 
