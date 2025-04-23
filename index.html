@@ -8,7 +8,7 @@
         body {
             margin: 0;
             height: 100vh;
-            background: linear-gradient(135deg, #ffd1dc, #ffe4e1);
+            background: #d0e8ff; /* Azul bem clarinho */
             font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
@@ -16,8 +16,8 @@
             justify-content: center;
             text-align: center;
             color: #8b0000;
-            position: relative;  /* Importante para os emojis caírem sobre o conteúdo */
-            overflow: hidden;    /* Evita que os emojis saiam da tela */
+            position: relative;
+            overflow: hidden;
         }
 
         h1 {
@@ -64,18 +64,16 @@
             const emoji = document.createElement('div');
             emoji.classList.add('emoji');
             emoji.textContent = '❤️';
-            emoji.style.left = Math.random() * window.innerWidth + 'px';  // Posição aleatória
-            emoji.style.animationDuration = Math.random() * 2 + 3 + 's'; // Duração aleatória
+            emoji.style.left = Math.random() * window.innerWidth + 'px';
+            emoji.style.animationDuration = Math.random() * 2 + 3 + 's';
 
             document.body.appendChild(emoji);
 
-            // Remover o emoji após a animação terminar
             setTimeout(() => {
                 emoji.remove();
-            }, 5000);  // Tempo que o emoji fica na tela
+            }, 5000);
         }
 
-        // Gerar a chuva de emojis a cada 100ms
         setInterval(createEmoji, 100);
     </script>
 </body>
