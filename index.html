@@ -16,6 +16,8 @@
             justify-content: center;
             text-align: center;
             color: #8b0000;
+            position: relative;  /* Importante para os emojis caírem sobre o conteúdo */
+            overflow: hidden;    /* Evita que os emojis saiam da tela */
         }
 
         h1 {
@@ -33,6 +35,21 @@
         audio {
             margin-top: 20px;
         }
+
+        .emoji {
+            position: absolute;
+            font-size: 24px;
+            animation: fall 3s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -50px;
+            }
+            100% {
+                top: 100vh;
+            }
+        }
     </style>
 </head>
 <body>
@@ -41,5 +58,25 @@
     <audio controls>
         <source src="Aliança - Tribalistas (clipe oficial).mp3" type="audio/mpeg">
     </audio>
+
+    <script>
+        function createEmoji() {
+            const emoji = document.createElement('div');
+            emoji.classList.add('emoji');
+            emoji.textContent = '❤️';
+            emoji.style.left = Math.random() * window.innerWidth + 'px';  // Posição aleatória
+            emoji.style.animationDuration = Math.random() * 2 + 3 + 's'; // Duração aleatória
+
+            document.body.appendChild(emoji);
+
+            // Remover o emoji após a animação terminar
+            setTimeout(() => {
+                emoji.remove();
+            }, 5000);  // Tempo que o emoji fica na tela
+        }
+
+        // Gerar a chuva de emojis a cada 100ms
+        setInterval(createEmoji, 100);
+    </script>
 </body>
 </html>
